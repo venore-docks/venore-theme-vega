@@ -1,0 +1,210 @@
+/* Venore Vega — variação de paleta do Aurora (mesma família dark-first developer tool: raio,
+   motion, tipografia e densidade idênticos, ver venore-theme-aurora/theme.css). Só o matiz muda
+   — âmbar/dourado em vez de índigo-violeta — mesma luminosidade/croma, girado de 275 pra 70.
+   Shell.tsx também varia (rodapé vira status bar fixa embaixo, ver Shell.tsx deste tema).
+
+   [data-theme="vega"] no <html> ativa o bloco base; .dark também vive no <html> (nunca
+   aninhado), por isso a variante escura é o seletor composto abaixo. */
+
+[data-theme="vega"] {
+  /* raio — contido, sem curvas macias; developer tools usam cantos discretos. */
+  --radius: 0.5rem;
+  --radius-shell: 0rem;
+  --radius-panel: 0.625rem;
+  --ui-radius-scale-sm: 0.6;
+  --ui-radius-scale-md: 1;
+  --ui-radius-scale-lg: 1.7;
+  --ui-radius-scale-xl: 2.4;
+  --ui-radius-scale-2xl: 3;
+  --ui-radius-scale-3xl: 3.6;
+  --ui-radius-scale-4xl: 4.2;
+
+  --ui-tracking-caps: 0.08em;
+
+  /* motion — rápido e direto, sem drama. */
+  --ui-motion-fast: 100ms;
+  --ui-motion-base: 150ms;
+  --ui-motion-slow: 240ms;
+  --ui-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ui-ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* tipografia — confiante, tight, sem peso excessivo. */
+  --ui-font-weight-body: 400;
+  --ui-font-weight-medium: 500;
+  --ui-font-weight-semibold: 600;
+  --ui-font-weight-display: 600;
+  --ui-leading-copy: 1.5;
+  --ui-leading-display: 1.1;
+  --ui-tracking-copy: 0em;
+  --ui-tracking-display: -0.02em;
+
+  /* controles — densidade de dashboard, compacta. */
+  --ui-control-height-xs: 1.75rem;
+  --ui-control-height-sm: 2.25rem;
+  --ui-control-height-md: 2.5rem;
+  --ui-control-height-lg: 2.75rem;
+  --ui-control-padding-x: 1rem;
+  --ui-button-padding-scale-xs: 0.5;
+  --ui-button-padding-scale-sm: 0.7;
+  --ui-button-padding-scale-lg: 1.8;
+  --ui-button-gap: 0.5rem;
+
+  --ui-panel-padding-x: 1.25rem;
+  --ui-panel-padding-y: 1.25rem;
+
+  /* base shadcn — zinc levemente âmbar, cards em branco puro pra separar do fundo. */
+  --background: oklch(0.985 0.002 70);
+  --foreground: oklch(0.19 0.01 70);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.01 70);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.01 70);
+  --primary: oklch(0.53 0.21 70);
+  --primary-foreground: oklch(0.98 0.01 70);
+  --secondary: oklch(0.96 0.004 70);
+  --secondary-foreground: oklch(0.24 0.01 70);
+  --muted: oklch(0.96 0.004 70);
+  --muted-foreground: oklch(0.48 0.012 70);
+  --accent: oklch(0.93 0.035 70);
+  --accent-foreground: oklch(0.28 0.03 70);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
+  --border: oklch(0.9 0.006 70);
+  --input: oklch(0.9 0.006 70);
+  --ring: oklch(0.53 0.18 70);
+
+  --shadow-color: oklch(0.5 0.02 70);
+  --shadow-color-strong: oklch(0.3 0.02 70);
+  --shadow-color-soft: color-mix(in oklch, var(--shadow-color) 16%, transparent);
+  --shadow-color-strong-soft: color-mix(in oklch, var(--shadow-color-strong) 14%, transparent);
+  --shadow-panel: 0 1px 2px -1px var(--shadow-color-strong-soft), 0 8px 20px -12px var(--shadow-color-soft);
+  --shadow-float: 0 2px 6px -2px var(--shadow-color-strong-soft), 0 14px 30px -14px var(--shadow-color-strong-soft);
+  --shadow-header: 0 1px 0 0 var(--border);
+
+  /* sidebar — compacta, largura de developer tool. */
+  --sidebar-width-expanded: 15rem;
+  --sidebar-width-collapsed: 4.25rem;
+
+  --sidebar-bg-start: oklch(0.97 0.003 70);
+  --sidebar-bg-end: oklch(0.955 0.006 70);
+  --sidebar-bg: linear-gradient(180deg, var(--sidebar-bg-start) 0%, var(--sidebar-bg-end) 100%);
+  --sidebar-bg-admin-start: oklch(0.24 0.03 70);
+  --sidebar-bg-admin-end: oklch(0.19 0.03 70);
+  --sidebar-bg-admin: linear-gradient(180deg, var(--sidebar-bg-admin-start) 0%, var(--sidebar-bg-admin-end) 100%);
+
+  --warning: oklch(0.62 0.16 70);
+  --warning-foreground: oklch(0.98 0.01 70);
+  --warning-soft: color-mix(in oklch, var(--warning) 12%, var(--card));
+  --warning-border: color-mix(in oklch, var(--warning) 28%, var(--border));
+
+  --success: oklch(0.55 0.14 155);
+  --success-foreground: oklch(0.98 0.01 155);
+  --success-soft: color-mix(in oklch, var(--success) 12%, var(--card));
+  --success-border: color-mix(in oklch, var(--success) 28%, var(--border));
+
+  --chart-1: var(--primary);
+  --chart-2: oklch(0.62 0.14 200);
+  --chart-3: var(--muted-foreground);
+  --chart-4: var(--warning);
+  --chart-5: var(--destructive);
+  --chart-6: oklch(0.6 0.16 235);
+  --chart-7: oklch(0.62 0.18 350);
+
+  --overlay-foreground: oklch(1 0 0);
+
+  /* superfície "apresentação" — sempre a versão escura do tema, frozen (só bloco base). */
+  --presentation-ground: oklch(0.14 0.006 70);
+  --presentation-card: oklch(0.19 0.007 70);
+  --presentation-border: oklch(0.3 0.01 70);
+  --presentation-foreground: oklch(0.93 0.005 70);
+  --presentation-muted-foreground: oklch(0.72 0.014 70);
+  --presentation-success: oklch(0.7 0.15 155);
+  --presentation-success-soft: color-mix(in oklch, var(--presentation-success) 16%, var(--presentation-card));
+  --presentation-success-border: color-mix(in oklch, var(--presentation-success) 34%, var(--presentation-border));
+  --presentation-warning: oklch(0.76 0.15 70);
+  --presentation-warning-soft: color-mix(in oklch, var(--presentation-warning) 16%, var(--presentation-card));
+  --presentation-warning-border: color-mix(in oklch, var(--presentation-warning) 34%, var(--presentation-border));
+  --presentation-destructive: oklch(0.6 0.2 25);
+  --presentation-renewed: oklch(0.64 0.17 235);
+  --presentation-new: oklch(0.66 0.18 350);
+
+  --app-bg-start: oklch(0.99 0.002 70);
+  --app-bg-mid: oklch(0.985 0.003 70);
+  --app-bg-end: oklch(0.978 0.004 70);
+  --app-background: linear-gradient(180deg, var(--app-bg-start) 0%, var(--app-bg-mid) 55%, var(--app-bg-end) 100%);
+
+  --header-bg: oklch(1 0 0);
+  --header-chip-bg: color-mix(in oklch, var(--muted) 50%, var(--card));
+  --header-avatar-bg: color-mix(in oklch, var(--accent) 30%, var(--card));
+  --header-avatar-fg: var(--foreground);
+  --header-border-subtle: var(--border);
+  --header-border-strong: var(--ring);
+}
+
+[data-theme="vega"].dark {
+  /* base shadcn — zinc quase-preto (nunca preto puro), texto off-white pra evitar halação. */
+  --background: oklch(0.17 0.005 70);
+  --foreground: oklch(0.92 0.004 70);
+  --card: oklch(0.21 0.006 70);
+  --card-foreground: oklch(0.95 0.003 70);
+  --popover: oklch(0.19 0.006 70);
+  --popover-foreground: oklch(0.95 0.003 70);
+  --primary: oklch(0.72 0.19 70);
+  --primary-foreground: oklch(0.16 0.02 70);
+  --secondary: oklch(0.26 0.008 70);
+  --secondary-foreground: oklch(0.95 0.003 70);
+  --muted: oklch(0.26 0.008 70);
+  --muted-foreground: oklch(0.66 0.012 70);
+  --accent: oklch(0.32 0.05 70);
+  --accent-foreground: oklch(0.94 0.02 70);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.97 0.01 25);
+  --border: oklch(0.3 0.008 70);
+  --input: oklch(0.28 0.01 70);
+  --ring: oklch(0.68 0.18 70);
+
+  --shadow-color: oklch(0.02 0 0);
+  --shadow-color-strong: oklch(0 0 0);
+  --shadow-color-soft: color-mix(in oklch, var(--shadow-color) 45%, transparent);
+  --shadow-color-strong-soft: color-mix(in oklch, var(--shadow-color-strong) 42%, transparent);
+  --shadow-panel: 0 1px 2px -1px var(--shadow-color-strong-soft), 0 10px 24px -14px var(--shadow-color-soft);
+  --shadow-float: 0 2px 6px -2px var(--shadow-color-strong-soft), 0 16px 34px -16px var(--shadow-color-strong-soft);
+  --shadow-header: 0 1px 0 0 var(--border);
+
+  --sidebar-bg-start: oklch(0.15 0.006 70);
+  --sidebar-bg-end: oklch(0.13 0.006 70);
+  --sidebar-bg: linear-gradient(180deg, var(--sidebar-bg-start) 0%, var(--sidebar-bg-end) 100%);
+  --sidebar-bg-admin-start: oklch(0.24 0.05 70);
+  --sidebar-bg-admin-end: oklch(0.19 0.05 70);
+  --sidebar-bg-admin: linear-gradient(180deg, var(--sidebar-bg-admin-start) 0%, var(--sidebar-bg-admin-end) 100%);
+
+  --warning: oklch(0.75 0.15 70);
+  --warning-foreground: oklch(0.16 0.02 70);
+  --warning-soft: color-mix(in oklch, var(--warning) 16%, var(--card));
+  --warning-border: color-mix(in oklch, var(--warning) 32%, var(--border));
+
+  --success: oklch(0.68 0.15 155);
+  --success-foreground: oklch(0.15 0.02 155);
+  --success-soft: color-mix(in oklch, var(--success) 16%, var(--card));
+  --success-border: color-mix(in oklch, var(--success) 32%, var(--border));
+
+  --chart-1: var(--primary);
+  --chart-2: oklch(0.68 0.13 200);
+  --chart-3: var(--muted-foreground);
+  --chart-4: var(--warning);
+  --chart-5: var(--destructive);
+  --chart-6: oklch(0.64 0.17 235);
+  --chart-7: oklch(0.66 0.18 350);
+
+  --app-bg-start: oklch(0.15 0.006 70);
+  --app-bg-mid: oklch(0.145 0.006 70);
+  --app-bg-end: oklch(0.13 0.007 70);
+  --app-background: linear-gradient(180deg, var(--app-bg-start) 0%, var(--app-bg-mid) 55%, var(--app-bg-end) 100%);
+
+  --header-bg: oklch(0.15 0.006 70);
+  --header-chip-bg: color-mix(in oklch, var(--muted) 55%, var(--card));
+  --header-avatar-bg: color-mix(in oklch, var(--accent) 30%, var(--card));
+  --header-avatar-fg: var(--foreground);
+  --header-border-subtle: var(--border);
+  --header-border-strong: var(--ring);
+}
