@@ -81,12 +81,15 @@
   --shadow-float: 0 2px 6px -2px var(--shadow-color-strong-soft), 0 14px 30px -14px var(--shadow-color-strong-soft);
   --shadow-header: 0 1px 0 0 var(--border);
 
-  /* sidebar — compacta, largura de developer tool. */
+  /* sidebar — compacta, largura de developer tool. --sidebar-bg usa a MESMA cor de
+     --sidebar-bg-admin (pedido desta sessão: o tom do admin-nav ficou bom demais pra deixar
+     só ali) — main-nav e admin-nav têm o painel idêntico agora; a distinção de modo vira
+     borda (cor+espessura, ver SidebarLeftSlot.tsx), não mais troca de fundo. */
   --sidebar-width-expanded: 15rem;
   --sidebar-width-collapsed: 4.25rem;
 
-  --sidebar-bg-start: oklch(0.97 0.003 70);
-  --sidebar-bg-end: oklch(0.955 0.006 70);
+  --sidebar-bg-start: oklch(0.24 0.03 70);
+  --sidebar-bg-end: oklch(0.19 0.03 70);
   --sidebar-bg: linear-gradient(180deg, var(--sidebar-bg-start) 0%, var(--sidebar-bg-end) 100%);
   --sidebar-bg-admin-start: oklch(0.24 0.03 70);
   --sidebar-bg-admin-end: oklch(0.19 0.03 70);
@@ -171,8 +174,8 @@
   --shadow-float: 0 2px 6px -2px var(--shadow-color-strong-soft), 0 16px 34px -16px var(--shadow-color-strong-soft);
   --shadow-header: 0 1px 0 0 var(--border);
 
-  --sidebar-bg-start: oklch(0.15 0.006 70);
-  --sidebar-bg-end: oklch(0.13 0.006 70);
+  --sidebar-bg-start: oklch(0.24 0.05 70);
+  --sidebar-bg-end: oklch(0.19 0.05 70);
   --sidebar-bg: linear-gradient(180deg, var(--sidebar-bg-start) 0%, var(--sidebar-bg-end) 100%);
   --sidebar-bg-admin-start: oklch(0.24 0.05 70);
   --sidebar-bg-admin-end: oklch(0.19 0.05 70);

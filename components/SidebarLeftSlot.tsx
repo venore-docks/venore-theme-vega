@@ -67,8 +67,12 @@ export function SidebarLeftSlot({
         // a do Venore Slime (5.5rem) — px-5 (usado lá) não cabe: 4.25rem − 2×px-5 − padding do
         // item − ícone ficava negativo, cortando o ícone (bug reportado). px-3 deixa folga
         // suficiente pro rail compacto (ver SidebarNavLink.tsx pro resto da conta).
-        "relative flex h-full w-full flex-col px-3 py-6 text-foreground shadow-float lg:w-(--sidebar-width-expanded) lg:shrink-0 lg:border-r lg:shadow-none ui-motion-emphasis",
-        isAdmin ? "border-ring bg-(image:--sidebar-bg-admin)" : "border-border bg-(image:--sidebar-bg)",
+        // Cópia deste tema: --sidebar-bg é a MESMA cor em main-nav e admin-nav (pedido desta
+        // sessão — o tom do admin ficou bom demais pra deixar só ali, ver theme.css). A
+        // distinção de modo vira borda: mais grossa e na cor do --ring quando admin, hairline
+        // --border quando main — não troca mais o painel inteiro.
+        "relative flex h-full w-full flex-col px-3 py-6 text-foreground shadow-float bg-(image:--sidebar-bg) lg:w-(--sidebar-width-expanded) lg:shrink-0 lg:shadow-none ui-motion-emphasis",
+        isAdmin ? "border-ring lg:border-r-2" : "border-border lg:border-r",
         collapsed && "lg:w-(--sidebar-width-collapsed)",
       )}
     >
