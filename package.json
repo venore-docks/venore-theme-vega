@@ -1,6 +1,6 @@
 {
   "name": "@venore/theme-vega",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Vega — variação do Aurora (developer tool dark-first): rodapé em status bar full-width, acento âmbar/dourado.",
   "private": true,
   "type": "module",

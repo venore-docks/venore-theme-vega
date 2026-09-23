@@ -3,7 +3,7 @@ import type { ThemeManifest } from "@venore/theme-sdk";
 export const vegaManifest: ThemeManifest = {
   key: "vega",
   name: "Vega",
-  version: "0.1.0",
+  version: "0.1.4",
   themeContractVersion: "7.0.0",
   // logoUrl real vem de contexts/settings (upload em /admin/settings/brand) — isto só declara os
   // valores padrão de exibição. Cor aproxima o âmbar/dourado de --primary no modo escuro
